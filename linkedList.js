@@ -67,6 +67,25 @@ SinglyList.prototype.remove = (position) =>{
   }
     this._length--;
 }
-
+// Check whether linked list is a palindrome
 SinglyList.prototype.checkPalindrome = () =>{
+    var stack = [];
+    var fast = new Node();
+    var slow = new Node();
+    while(fast!=null && fast.next!=null){
+        stack.push(slow.data);
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+    if(fast!=null)
+        slow = slow.next;
+    while(slow != null){
+        if(slow.data != stack.pop()){
+            return false;
+        }
+    }
+    return true;
+}
+
+// Check whether linked list is
 
