@@ -1,0 +1,10 @@
+// Find if one string is a permutation of another
+"use strict"
+ var isPermutation = (a,b) => {
+     if(a.length != b.length)
+         return false;
+     else{
+         return a.split("").sort().join("") == b.split("").sort().join("");
+     }
+ }
+ console.log(isPermutation("Abhishanga","Agnahashib"))
